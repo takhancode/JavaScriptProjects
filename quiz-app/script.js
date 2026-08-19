@@ -74,11 +74,13 @@ nextbtn.addEventListener("click",function(){
 
     currentquestion++;
     questionplace.textContent=questions[currentquestion].question;
-
+    ansbtn.forEach((val,x)=>{
+    val.textContent=questions[currentquestion].answers[x];
+})
+if(currentquestion>=questions.length-1){
+    nextbtn.disabled=true;
+}
    
 })
  
-ansbtn.forEach((val,x)=>{
-    val.textcontent=questions[currentquestion].answers[x];
-})
 
