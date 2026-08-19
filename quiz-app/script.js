@@ -82,5 +82,16 @@ if(currentquestion>=questions.length-1){
 }
    
 })
+
+
+ansbtn.forEach((btn,index)=>{
+    btn.addEventListener("click",function(){
+        if(index==questions[currentquestion].correct){
+            console.log("correct");
+        }else{
+            console.log("wrong");
+        }
+    })
+})
  
 
