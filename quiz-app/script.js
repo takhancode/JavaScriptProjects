@@ -3,7 +3,7 @@ let currentquestion=0;
 let questionplace=document.querySelector("h2");
 
 let nextbtn=document.getElementById("nextButton");
-let ansbtn=document.getElementsByClassName("ans")
+let ansbtn=document.getElementsByClassName("ans");
 
 let questions=[
 
@@ -76,5 +76,9 @@ nextbtn.addEventListener("click",function(){
     questionplace.textContent=questions[currentquestion].question;
 
    
+})
+ 
+ansbtn.forEach((val,x)=>{
+    val.textcontent=questions[currentquestion].answers[x];
 })
 
