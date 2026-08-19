@@ -5,7 +5,7 @@ let answered = false;
 let questionplace = document.querySelector("h2");
 let questionNumber = document.getElementById("questionNumber");
 let nextbtn = document.getElementById("nextButton");
-let ansbtn = document.getElementsByClassName("ans");
+let ansbtn = document.querySelectorAll(".ans");
 let result = document.getElementById("result");
 
 let questions = [
