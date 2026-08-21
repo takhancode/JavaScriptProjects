@@ -1,5 +1,7 @@
 let addbtn = document.getElementById("add");
 let taskinput = document.getElementById("task-input");
+let totalCount = document.getElementById("total-count");
+let completedCount = document.getElementById("completed-count");
 
 let tasks = [];
 
@@ -44,6 +46,7 @@ function renderTask(tasklist){
 
     }
 
+      renderTask(tasks);
 });
 
         let span = document.createElement("span");
@@ -71,13 +74,13 @@ function renderTask(tasklist){
         let deletebtn = document.createElement("button");
         deletebtn.innerText = "Delete";
 
-        deletebtn.addEventListener("click", function(){
+         deletebtn.addEventListener("click", function(){
+   
+         tasks.splice(index, 1);
 
-            tasks.splice(index, 1);
+        renderTask(tasks);
 
-            renderTask(tasks);
-
-        });
+});
 
         div.appendChild(editbtn);
         div.appendChild(deletebtn);
@@ -85,6 +88,7 @@ function renderTask(tasklist){
         tasksection.appendChild(div);
 
     });
+      totalCount.innerText = tasks.length;
 }
 
 let completed = document.getElementById("completed");
@@ -96,7 +100,8 @@ completed.addEventListener("click", function(){
         return taskobj.completed === true;
 
     });
-
+    
+     completedCount.innerText = completedTasks.length;
     renderTask(completedTasks);
 
 });
@@ -125,3 +130,5 @@ all.addEventListener("click", function(){
     renderTask(tasks);
 
 });
+
+
