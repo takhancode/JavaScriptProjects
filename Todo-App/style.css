@@ -1,0 +1,30 @@
+body{
+ background-color: lightblue;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+}
+#container {
+    background-color: lightcoral;
+    margin:0px 60px 90px 90px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 20px;
+}
+#task-input{
+    width: 200px;
+}
+
+button {
+    margin: 3px;
+    padding: 5px 10px;
+}
+
+.task-section {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    justify-content: space-between;
+}
