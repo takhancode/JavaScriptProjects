@@ -13,22 +13,38 @@ addbtn.addEventListener("click", function(){
 
     tasks.push(taskobj);
 
-    renderTask();
+    renderTask(tasks);
 });
 
 
-function renderTask(){
+function renderTask(tasklist){
 
     let tasksection = document.querySelector(".task-section");
 
     tasksection.innerHTML = "";
 
-    tasks.forEach(function(taskobj, index){
+    tasklist.forEach(function(taskobj, index){
 
         let div = document.createElement("div");
 
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        checkbox.checked=taskobj.completed;
+        checkbox.addEventListener("click", function(){
+
+        if (checkbox.checked) {
+
+        taskobj.completed = true;
+        taskobj.active = false;
+
+       } else {
+
+        taskobj.completed = false;
+        taskobj.active = true;
+
+    }
+
+});
 
         let span = document.createElement("span");
         span.innerText = taskobj.task;
@@ -39,6 +55,19 @@ function renderTask(){
         let editbtn = document.createElement("button");
         editbtn.innerText = "Edit";
 
+        editbtn.addEventListener("click", function(){
+
+      let newTask = prompt("Enter new task");
+
+       if(newTask !== null && newTask !== ""){
+
+        taskobj.task = newTask;
+
+        renderTask(tasks);
+    }
+
+});
+
         let deletebtn = document.createElement("button");
         deletebtn.innerText = "Delete";
 
@@ -46,7 +75,7 @@ function renderTask(){
 
             tasks.splice(index, 1);
 
-            renderTask();
+            renderTask(tasks);
 
         });
 
@@ -57,3 +86,42 @@ function renderTask(){
 
     });
 }
+
+let completed = document.getElementById("completed");
+
+completed.addEventListener("click", function(){
+
+    let completedTasks = tasks.filter(function(taskobj){
+
+        return taskobj.completed === true;
+
+    });
+
+    renderTask(completedTasks);
+
+});
+
+let active = document.getElementById("active");
+
+active.addEventListener("click", function(){
+
+    let activeTasks = tasks.filter(function(taskobj){
+
+        return taskobj.active === true;
+
+    });
+
+    renderTask(activeTasks);
+
+
+
+});
+
+
+
+let all = document.getElementById("all");
+all.addEventListener("click", function(){
+
+    renderTask(tasks);
+
+});
