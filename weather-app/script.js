@@ -11,20 +11,16 @@ search.addEventListener("click",function(){
     else{
 
         error.style.display="none";
-        console.log(cityinput);
+        console.log(cityinput.value);
+        let url =  `https:takhancode${cityinput.value}`; 
+        let response=fetch(url).then(function(response){ return response.json(); } );
+         response.then(function(result){ console.log(result); })
     }
+   
+
 })
 
 
-let url = `https:takhancode${cityinput.value}`;
-let response=fetch(url).then(function(response){
-   return response.json();
-}
-    
-);
-response.then(function(result){
-console.log(result);
-})
 
 
 
