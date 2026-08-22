@@ -16,10 +16,25 @@ body {
     gap: 5px;
 }
 .card{
-    width: 100px;
+    width: 200px;
     margin: 20px;
     padding: 20px;
     background-color: lightblue;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#search-container{
+    display: flex;
+    gap:10px;
+}
+
+
+#city-input{
+    width: 600px;
+    padding: 10px;
+}
+
+#search{
+    padding:10px;
 }
