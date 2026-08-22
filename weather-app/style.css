@@ -1,22 +1,24 @@
 body {
-    background-color:yellowgreen;
+    background-color: yellowgreen;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-#hero-section{
+
+#hero-section {
     display: flex;
 }
 
-#weather-display{
+#weather-display {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
-.card{
-    width: 200px;
+
+.card {
+    width: 100px;
     margin: 20px;
     padding: 20px;
     background-color: lightblue;
@@ -24,17 +26,17 @@ body {
     border-radius: 5px;
 }
 
-#search-container{
+
+#search-container {
     display: flex;
-    gap:10px;
+    gap: 10px;
 }
 
-
-#city-input{
-    width: 600px;
+#city-input {
+    width: 200px;
     padding: 10px;
 }
 
-#search{
-    padding:10px;
+#search {
+    padding: 10px 15px;
 }
