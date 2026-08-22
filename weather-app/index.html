@@ -4,12 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherProect</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="hero-section">
     <h1>WeatherApp</h1>
     </div>
+    <div id="search-container">
     <input type="text" name="" id="city-input" placeholder="Enter Your City">
+    <button id="search">search</button>
+    </div>
+     
+    <section id="weather-display">
+        <div class="card">
+            <div id="Temperature-card">
+            <p id="temperature"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="Weather-card">
+            <p id="condition"></p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div id="humidity-card">
+            <p id="humidity"></p>
+            </div>
+        </div>
+
+
+        
+        <div class="card">
+            <div id="wind-card">
+            <p id="wind"></p>
+            </div>
+        </div>
+
+        <div id="error">
+            <p></p>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script src="script.js"></script>
 </body>

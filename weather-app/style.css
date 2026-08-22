@@ -1,0 +1,17 @@
+body {
+    background-color:yellowgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#hero-section{
+    display: flex;
+}
+
+#weather-display{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
