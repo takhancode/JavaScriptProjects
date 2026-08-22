@@ -14,3 +14,17 @@ search.addEventListener("click",function(){
         console.log(cityinput);
     }
 })
+
+
+let url = `https:takhancode${cityinput.value}`;
+let response=fetch(url).then(function(response){
+   return response.json();
+}
+    
+);
+response.then(function(result){
+console.log(result);
+})
+
+
+
