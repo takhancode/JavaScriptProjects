@@ -40,3 +40,6 @@ body {
 #search {
     padding: 10px 15px;
 }
+#error{
+    display: none;
+}
