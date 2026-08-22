@@ -5,10 +5,12 @@ let error=document.getElementById("error");
 
 
 search.addEventListener("click",function(){
-    if(cityinput.value==""){
-        error.innerText="InputFieldsEmpty";
+    if(cityinput.value===""){
+        error.style.display="block";
     }
     else{
-        console.log(cityinput.value);
+
+        error.style.display="none";
+        console.log(cityinput);
     }
 })
