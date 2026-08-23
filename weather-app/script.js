@@ -51,7 +51,21 @@ search.addEventListener("click", function () {
                     temperatureElement.innerText = temperature + " °C";
                     humidityElement.innerText = humidity + " %";
                     windElement.innerText = wind + " km/h";
-                    conditionElement.innerText = "Code: " + condition;
+                    if (condition === 0) {
+                   conditionElement.innerText = "Clear Sky";
+                    }
+                    else if (condition === 1 || condition === 2 || condition === 3) {
+                     conditionElement.innerText = "Cloudy";
+                    }
+                    else if (condition === 61 || condition === 63 || condition === 65) {
+                      conditionElement.innerText = "Rain";
+                    }
+                    else if (condition === 80 || condition === 81 || condition === 82) {
+                     conditionElement.innerText = "Rain Showers";
+                    }
+                    else {
+                    conditionElement.innerText = "Other Weather";
+                    }
                 });
 
         })
