@@ -1,6 +1,7 @@
 let cityinput = document.getElementById("city-input");
 let search = document.getElementById("search");
 let error = document.getElementById("error");
+let temperatureElement = document.getElementById("temperature");
 
 search.addEventListener("click", function () {
 
@@ -25,7 +26,14 @@ search.addEventListener("click", function () {
                 let weatherUrl =
                     `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m`;
 
-                console.log(weatherUrl);
+                fetch(weatherUrl)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (result) {
+                        let temperature = result.current.temperature_2m;
+                        temperatureElement.innerText = temperature + "°C";
+                    });
 
             });
 
