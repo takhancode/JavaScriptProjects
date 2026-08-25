@@ -8,3 +8,24 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: cornflowerblue;
 }
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-controls{
+    display: flex;
+    gap: 5px;
+}
+#Dashboard{
+    display: flex;
+    gap: 5px;
+}
+.card{
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+
+}
