@@ -26,9 +26,7 @@ body{
     padding: 20px;
     background-color: white;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid black;
-    border-radius: rounded-corner;
-
+    border-radius:10px;
 }
 
 
@@ -66,4 +64,7 @@ border: 1px solid black;
     border:1px solid black;
     border-bottom: 1px solid black;
     
+}
+#expenseModal{
+    display: none;
 }
