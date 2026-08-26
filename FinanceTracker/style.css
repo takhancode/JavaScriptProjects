@@ -6,7 +6,7 @@
 body{
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: cornflowerblue;
+    background-color: lightskyblue;
 }
 #header{
     display: flex;
@@ -27,5 +27,43 @@ body{
     background-color: white;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid black;
+    border-radius: rounded-corner;
 
+}
+
+
+#Overview {
+  display: flex;
+  gap: 10px;
+}
+
+.chartarea {
+  flex-grow: 2;
+  min-height: 200px;
+  background-color: white;
+}
+
+.expensebreakdown {
+  flex-grow: 1;
+  min-height: 200px;
+  background-color: white;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+   
+}
+
+.table th{
+padding: 20px; 
+text-align: left;
+border: 1px solid black;
+}
+.table td{
+    padding: 20px;
+    text-align:left;
+    border:1px solid black;
+    border-bottom: 1px solid black;
+    
 }
