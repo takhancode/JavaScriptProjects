@@ -57,24 +57,28 @@
 
    <div id="transactions">
       <table class="table">
+        
     <thead>
         <tr>
-            <th>Transactions</th>
-            <th>Date</th>
+            <th>Name</th>
+            <th>Amount</th>
             <th>Category</th>
+            <th>Type</th>
+            <th>Date</th>
         </tr>
     </thead>
-
-    <tbody>
+   <tbody id="tablebody">
     <tr>
         <td>Row1</td>
         <td>Row2</td>
         <td>Row3</td>
+        <td>Row4</td>
+        <td>Row5</td>
     </tr>
     </tbody>
     </table>
    </div>
-
+  <form id="submit-form">
    <div id="expenseModal">
     <input type="text" id="expensename" placeholder="ExpenseName">
     <input type="text" id="expenseamount" placeholder="ExpenseAmount">
@@ -91,6 +95,7 @@
     <input type="date" id="expensedate">
     <button id="submit-btn" type="submit">Submit</button>
    </div>
+   </form>
   <script src="script.js"></script>
 </body>
 </html>
