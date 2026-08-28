@@ -38,8 +38,15 @@ submitbutton.addEventListener("click",function(e){
     date: expensedate
 };
 
+if(name === "" || amount === "" || expensedate === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+
 expense.push(newExpense);
 renderTable();
+updateDashboard();
 console.log(expense);
  expensemodel.style.display="none";
  form.reset();
@@ -60,7 +67,7 @@ function renderTable(){
     });
 }
 
-renderTable();
+
 
 function updateDashboard(){
     let totalincome = 0;
@@ -79,3 +86,6 @@ function updateDashboard(){
     expensedisplay.textContent=totalexpense;
     balancedisplay.textContent = totalincome - totalexpense;
 }
+
+renderTable();
+updateDashboard();
