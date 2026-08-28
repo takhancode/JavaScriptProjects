@@ -5,13 +5,20 @@
 }
 body{
     margin: 0;
+    padding: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: lightskyblue;
+    background-color: #f1f5f9;
 }
 #header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    margin-bottom: 20px;
+    color: gray;
+}
+#header h1{
+    color: black;
 }
 .header-controls{
     display: flex;
@@ -20,6 +27,7 @@ body{
 #Dashboard{
     display: flex;
     gap: 5px;
+    margin-bottom: 20px;
 }
 .card{
     flex-grow: 1;
@@ -33,6 +41,7 @@ body{
 #Overview {
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .chartarea {
@@ -56,15 +65,37 @@ body{
 .table th{
 padding: 20px; 
 text-align: left;
-border: 1px solid black;
+border-bottom: 1px solid #e5e7eb;;
+background-color: lightblue;
 }
 .table td{
     padding: 20px;
     text-align:left;
-    border:1px solid black;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #e5e7eb;
+
     
 }
 #expenseModal{
     display: none;
+}
+
+#addexpense{
+ background-color: green;
+ border-radius: 3px;
+ margin-top: 10px;
+ padding: 10px 20px;
+ color: white;
+ cursor: pointer;
+ border: none;
+}
+
+#closebutton{
+ background-color: red;
+ border-radius: 3px;
+ margin-top: 10px;
+ margin-left: 4px;
+ padding: 10px 20px;
+ color: white;
+ cursor: pointer;
+ border: none;
 }
