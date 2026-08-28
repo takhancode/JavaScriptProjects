@@ -10,6 +10,10 @@ let expensetype=document.getElementById("expensetype");
 let date=document.getElementById("expensedate");
 let form=document.getElementById("submit-form");
 let tbody=document.getElementById("tablebody");
+let incomedisplay=document.getElementById("incomeamount");
+let expensedisplay=document.getElementById("expenseamounttotal");
+let balancedisplay=document.getElementById("balanceamount");
+
 addexpensebutton.addEventListener("click", function(){
     expensemodel.style.display = "block"; 
 });
@@ -58,3 +62,20 @@ function renderTable(){
 
 renderTable();
 
+function updateDashboard(){
+    let totalincome = 0;
+    let totalexpense = 0;
+    
+    expense.forEach(function(item){
+        if(item.expensetype == "income"){
+            totalincome += item.expenseamount;
+        }
+        else if(item.expensetype == "expense"){
+            totalexpense += item.expenseamount;
+        }
+    });
+    
+    incomedisplay.textContent=totalincome;
+    expensedisplay.textContent=totalexpense;
+    balancedisplay.textContent = totalincome - totalexpense;
+}
