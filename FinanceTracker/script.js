@@ -47,6 +47,7 @@ if(name === "" || amount === "" || expensedate === ""){
 expense.push(newExpense);
 renderTable();
 updateDashboard();
+renderchart();
 console.log(expense);
  expensemodel.style.display="none";
  form.reset();
@@ -87,8 +88,8 @@ function updateDashboard(){
     balancedisplay.textContent = totalincome - totalexpense;
 }
 
-renderTable();
-updateDashboard();
+
+
 
 
 
@@ -119,13 +120,16 @@ function renderchart(){
     
     let breakdownlist=document.getElementById("breakdownlist");
     breakdownlist.innerHTML="";
-
-   for(let key in expense){
-   let div=document.createElement("div");
-   let p= document.createElement("p");
-    div.appendChild(p);
-    p.innerText=key.value;
-    breakdownlist.appendChild(div);
-
+   for(let key in categorytotals){
+   let div = document.createElement("div");
+   let p = document.createElement("p");
+   div.appendChild(p);
+   p.innerText = key + ": " + categorytotals[key];
+   breakdownlist.appendChild(div);
 }
 } 
+
+
+renderTable();
+updateDashboard();
+renderchart();
