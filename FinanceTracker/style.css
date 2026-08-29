@@ -135,9 +135,35 @@ background-color: lightblue;
 
     
 }
-#expenseModal{
+#expenseModal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
     display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
 }
+#expenseModal input, #expenseModal select {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+
+#submit-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
 
 #addexpense{
  background-color: green;
