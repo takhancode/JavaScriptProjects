@@ -127,9 +127,34 @@ function renderchart(){
    p.innerText = key + ": " + categorytotals[key];
    breakdownlist.appendChild(div);
 }
+
+
+
+    let chartarea = document.getElementById("chartarea");
+    chartarea.innerHTML = "";
+    for(let key in categorytotals){
+    let bardiv = document.createElement("div");
+    bardiv.className = "bardiv";
+    
+    let bar = document.createElement("div");
+    bar.className = "bar";
+    bar.style.height = (categorytotals[key] / 10) + "px";
+    
+    let label = document.createElement("label");
+    label.innerText = key;
+    
+    bardiv.appendChild(bar);
+    bardiv.appendChild(label);
+    
+    chartarea.appendChild(bardiv);
+}
 } 
 
 
 renderTable();
 updateDashboard();
 renderchart();
+
+
+
+
