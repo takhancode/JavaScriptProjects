@@ -15,12 +15,13 @@
         Daily <i class="fas fa-chevron-down"></i>
      </div>
      <div class="datepicker">
-      
+      <i class="fas fa-calendar"></i>
+      16 January 2025
      </div>
      <button class="export-btn">
-                <i class="fas fa-download"></i>
-                Export
-            </button>
+      <i class="fas fa-download"></i>
+      Export
+      </button>
      </div> 
    </div>
    <div id="Dashboard">
@@ -51,9 +52,9 @@
 
    <div id="Overview">
     <div class="chartarea">
-
+   <p>chartarea</p>
     </div>
-    <div class="expensebreakdown">
+    <div class="expensebreakdown" id="breakdownlist">
 
     </div>
    </div>
@@ -91,6 +92,7 @@
     <option value="utility">Utility</option>
     <option value="transportation">Transportation</option>
     <option value="healthcare">Healthcare</option>
+    <option value="other">Other</option>
   </select>
       <select  id="expensetype">
         <option value="expense">Expense</option>

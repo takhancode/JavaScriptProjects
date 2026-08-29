@@ -24,6 +24,29 @@ body{
     display: flex;
     gap: 5px;
 }
+
+.dropdown, .datepicker {
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.export-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
 #Dashboard{
     display: flex;
     gap: 5px;

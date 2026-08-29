@@ -89,3 +89,43 @@ function updateDashboard(){
 
 renderTable();
 updateDashboard();
+
+
+
+let categorytotals={
+    housing:0,
+    utility:0,
+    transportation:0,
+    healthcare:0,
+    other:0
+}
+
+
+function renderchart(){
+    
+    categorytotals.housing = 0;
+    categorytotals.utility = 0;
+    categorytotals.transportation = 0;
+    categorytotals.healthcare = 0;
+    categorytotals.other = 0;
+    
+    // 2. expense array par forEach chalao (jaisa pehle karte the), 
+    //    har item ka expensecategory dekh kar categorytotals mein add karo
+    expense.forEach(function(item){
+        categorytotals[item.expensecategory] += item.expenseamount;
+    });
+    
+    // 3. breakdownlist (HTML div) ko khaali karo (jaisa tbody.innerHTML = "" kiya tha)
+    
+    let breakdownlist=document.getElementById("breakdownlist");
+    breakdownlist.innerHTML="";
+
+   for(let key in expense){
+   let div=document.createElement("div");
+   let p= document.createElement("p");
+    div.appendChild(p);
+    p.innerText=key.value;
+    breakdownlist.appendChild(div);
+
+}
+} 
