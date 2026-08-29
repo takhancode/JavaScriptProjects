@@ -122,9 +122,7 @@ function renderchart(){
     breakdownlist.innerHTML="";
    for(let key in categorytotals){
    let div = document.createElement("div");
-   let p = document.createElement("p");
-   div.appendChild(p);
-   p.innerText = key + ": " + categorytotals[key];
+   div.innerHTML = `<span>${key}</span><strong>${categorytotals[key]}</strong>`;
    breakdownlist.appendChild(div);
 }
 
@@ -138,7 +136,7 @@ function renderchart(){
     
     let bar = document.createElement("div");
     bar.className = "bar";
-    bar.style.height = (categorytotals[key] / 10) + "px";
+    bar.style.height = (categorytotals[key] / 50) + "px";
     
     let label = document.createElement("label");
     label.innerText = key;
