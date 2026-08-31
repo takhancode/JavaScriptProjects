@@ -160,7 +160,7 @@ function renderchart(){
     
     let bar = document.createElement("div");
     bar.className = "bar";
-    bar.style.height = (categorytotals[key] / 50) + "px";
+    bar.style.height = (categorytotals[key] / 200) + "px";
     
     let label = document.createElement("label");
     label.innerText = key;
