@@ -162,34 +162,36 @@ background-color: lightblue;
     cursor: pointer;
 }
 
+#addexpense, #closebutton {
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
 
 
+#addexpense {
+    background-color: #10b981;
+    margin-right: 10px;
+}
 
-#addexpense{
- background-color: green;
- border-radius: 3px;
- margin-top: 10px;
- padding: 10px 20px;
- color: white;
- cursor: pointer;
- border: none;
+#closebutton {
+    background-color: #ef4444;
 }
 
 #addexpense:hover, #closebutton:hover {
-    opacity: 0.85;
-    transition: 0.2s ease;
+    opacity: 0.9;
+    transform: translateY(-1px);
+    transition: all 0.15s ease;
 }
 
-#closebutton{
- background-color: red;
- border-radius: 3px;
- margin-top: 10px;
- margin-left: 4px;
- padding: 10px 20px;
- color: white;
- cursor: pointer;
- border: none;
-}
 
 
 .bardiv {
@@ -217,4 +219,23 @@ background-color: lightblue;
 
 .deletebtn:hover {
     opacity: 0.85;
+}
+
+
+
+#typefilter {
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #374151;
+}
+
+
+#typefilter:focus {
+    outline: none;
+    border-color: #3b82f6;
 }
