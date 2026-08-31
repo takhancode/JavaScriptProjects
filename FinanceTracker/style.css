@@ -204,3 +204,17 @@ background-color: lightblue;
     background-color: orange;
     border-radius: 6px 6px 0 0;
 }
+
+.deletebtn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.deletebtn:hover {
+    opacity: 0.85;
+}

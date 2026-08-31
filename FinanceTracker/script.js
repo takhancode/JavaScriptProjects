@@ -3,6 +3,10 @@ let expensemodel = document.getElementById("expenseModal");
 let closebutton=document.getElementById("closebutton");
 let submitbutton=document.getElementById("submit-btn");
 let expense=[];
+let saved =localStorage.getItem("expenses");
+if(saved){
+    expense = JSON.parse(saved);
+};
 let expensename=document.getElementById("expensename");
 let expenseamount=document.getElementById("expenseamount");
 let expensecategory=document.getElementById("expensecategory");
@@ -13,6 +17,7 @@ let tbody=document.getElementById("tablebody");
 let incomedisplay=document.getElementById("incomeamount");
 let expensedisplay=document.getElementById("expenseamounttotal");
 let balancedisplay=document.getElementById("balanceamount");
+let typefilter = document.getElementById("typefilter");
 
 addexpensebutton.addEventListener("click", function(){
     expensemodel.style.display = "block"; 
@@ -31,6 +36,7 @@ submitbutton.addEventListener("click",function(e){
  let expensedate=date.value;
 
  let newExpense = {
+    id: expense.length+1,
     expensename: name,
     expenseamount: parseFloat(amount),
     expensecategory: category,
@@ -45,6 +51,7 @@ if(name === "" || amount === "" || expensedate === ""){
 
 
 expense.push(newExpense);
+localStorage.setItem("expenses", JSON.stringify(expense));
 renderTable();
 updateDashboard();
 renderchart();
@@ -54,20 +61,40 @@ console.log(expense);
 })
 
 function renderTable(){
-    tbody.innerHTML="";
-    expense.forEach(function(item){
-        let row=document.createElement("tr");
-        row.innerHTML=`
+    tbody.innerHTML = "";
+    let filtervalue = typefilter.value;
+    let filteredexpense = expense;
+    
+    if(filtervalue != "all"){
+        filteredexpense = expense.filter(function(item){
+            return item.expensetype === filtervalue;
+        });
+    }
+    
+    filteredexpense.forEach(function(item){
+        let row = document.createElement("tr");
+        row.innerHTML = `
         <td>${item.expensename}</td>
         <td>${item.expenseamount}</td>
         <td>${item.expensecategory}</td>
         <td>${item.expensetype}</td>
         <td>${item.date}</td>
+        <td><button class="deletebtn">Delete</button></td>
         `;
         tbody.appendChild(row);
+        
+        let deletebtn = row.querySelector(".deletebtn");
+        deletebtn.addEventListener("click", function(){
+            expense = expense.filter(function(e){
+                return e.id != item.id;
+            });
+            localStorage.setItem("expenses", JSON.stringify(expense));
+            renderTable();
+            updateDashboard();
+            renderchart();
+        });
     });
 }
-
 
 
 function updateDashboard(){
@@ -110,13 +137,10 @@ function renderchart(){
     categorytotals.healthcare = 0;
     categorytotals.other = 0;
     
-    // 2. expense array par forEach chalao (jaisa pehle karte the), 
-    //    har item ka expensecategory dekh kar categorytotals mein add karo
     expense.forEach(function(item){
         categorytotals[item.expensecategory] += item.expenseamount;
     });
-    
-    // 3. breakdownlist (HTML div) ko khaali karo (jaisa tbody.innerHTML = "" kiya tha)
+   
     
     let breakdownlist=document.getElementById("breakdownlist");
     breakdownlist.innerHTML="";
@@ -152,6 +176,16 @@ function renderchart(){
 renderTable();
 updateDashboard();
 renderchart();
+
+
+
+
+
+
+
+typefilter.addEventListener("change", function(){
+    renderTable();
+});
 
 
 
