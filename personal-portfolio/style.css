@@ -175,3 +175,60 @@ img {
 
 
 /*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color:transparent;
+  z-index: var(--z-fixed);
+}
+.nav{
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo{
+  color:var(--white-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__toggle{
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*Navigation for mobile devices*/
+@media(width<=1150px){
+  .nav__menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background-color: hsla(var(--hue), 8%, 10%, 0.4);
+    padding: 6rem 2rem 2rem 2rem 3rem;
+    transition: .4s;
+    z-index: var(--z-fixed);
+    transition:right 0.4s;
+  }
+
+  .nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  .nav__link{
+    position: relative;
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+  }
+
+
+}
