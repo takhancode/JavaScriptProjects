@@ -229,6 +229,49 @@ img {
     font-weight: var(--font-semi-bold);
     transition: color 0.4s;
   }
+ 
+  .nav__link:hover{
+    color: var(--first-color);
+  }
+  .nav__link::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    top:0;
+    left:-1rem;
+    bottom:0;
+    margin-block:auto;
+    opacity:0;
+    transition: opacity 0.4s;
+  }
+   
+  .nav__contact{
+    display:inline-flex;
+    background-color: var(--first-color); 
+    color: var(--black-color);
+    padding:1rem 2rem;
+    border-radius: 4rem;
+    font-weight: var(--font-semi-bold);
+    transition:box-shadow 0.4s;
+  }
+  .nav__contact:hover{
+    box-shadow: 0 8px 24px hsla(var(--hue), 75%, 60%, 0.3);
+  }
 
-
+  .nav__close{
+    position: absolute;
+    color: var(--white-color);
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .show-menu{
+    right: 0;
+  }
 }
