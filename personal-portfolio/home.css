@@ -1,0 +1,54 @@
+.home{
+    display:flex;
+    flex-direction:column-reverse;
+    margin: 2rem auto;
+    align-items: center;
+    gap:2.5rem;
+    width: 90%;
+    max-width: 700px;
+}
+
+.img-container{
+    width: 270px;
+    height: 270px;
+    display:flex;
+    position: relative;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-container::before,.img-container:after{
+    content: "";
+    position: absolute;
+    inset:0;
+    background-image: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        var(--green) 
+    );
+    animation: revolve 4s linear infinite;
+}
+
+.img-container:after{
+    animation-delay: 2s;
+}
+
+@keyframes revolve {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+       transform:rotate(360deg);
+    }
+    
+} 
+.img-container img{
+    width: calc(100% -15px);
+    height: calc(100%-15px);
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+}
