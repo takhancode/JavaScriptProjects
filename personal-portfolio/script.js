@@ -54,27 +54,37 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
 });
 
-const navlinks=document.querySelectorAll(".navlink");
-const tabs=document.querySelectorAll(".content");
+const navlinks = document.querySelectorAll(".navlink");
+const tabs = document.querySelectorAll(".content");
 
-navlinks.forEach((link)=>{
-link.addEventListener("click",(e)=>
-    {
-    e.preventDefault();
-    navlinks.forEach((l)=>{
-    if(l === link){
-       l.classList.add("active");
-    }
-    else{
-        l.classList.remove("active");
-    }
-}); 
-const tabName=link.dataset.tab;
+navlinks.forEach((link) => {
 
-tabs.forEach((tab) =>{
-if(tab.id===tabName){
-    tab.classList.add("active");
-}else{
-    tab.classList.remove("active");
-}
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        navlinks.forEach((l) => {
+
+            if (l === link) {
+                l.classList.add("active");
+            } else {
+                l.classList.remove("active");
+            }
+
+        });
+
+        const tabName = link.dataset.tab;
+
+        tabs.forEach((tab) => {
+
+            if (tab.id === tabName) {
+                tab.classList.add("active");
+            } else {
+                tab.classList.remove("active");
+            }
+
+        });
+
+    });
+
 });
