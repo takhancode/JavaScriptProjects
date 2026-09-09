@@ -1,4 +1,4 @@
-.home{
+#home.content.active{
     display:flex;
     flex-direction:column-reverse;
     margin: 2rem auto;
@@ -32,7 +32,7 @@
     animation: revolve 4s linear infinite;
 }
 
-.img-container:after{
+.img-container::after{
     animation-delay: 2s;
 }
 
@@ -121,7 +121,7 @@
     border:none;
     transition: all 0.3s;
 }
-.bottom button :hover{
+.bottom button:hover{
     box-shadow: 3px 3px 3px var(--green),
     -3px 3px 3px var(--green),
     3px -3px 3px var(--green),
@@ -145,13 +145,13 @@ scale:105%;
 
 
 @media screen and (width>=768px){
-    .home{
+    #home.content.active{
         display: grid;
         grid-template-columns: auto auto;
         width: 100%;
         max-width: 100%;
         justify-content: space-between;
-        gap: 3.5;
+        gap: 3.5rem;
     }
 
     .details h2{
@@ -163,7 +163,7 @@ scale:105%;
     }
 
     .social-icons{
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
     .bottom{
         flex-direction: row;
@@ -171,12 +171,12 @@ scale:105%;
     }
     .bottom button{
         width:12rem;
-        padding: 0.8 0;
+        padding: 0.8rem 0;
         font-size:1.3rem;
         font-weight: 750;
     }
-    .bottom-button{
-        border-radius:5px;
+    .bottom button{
+        border-radius:50px;
     }
 }
 
@@ -184,7 +184,7 @@ scale:105%;
 
 
 @media screen and (width>=1024px){
-    .home{
+    #home.content.active{
     margin: 3rem auto;
     }
     .img-container{

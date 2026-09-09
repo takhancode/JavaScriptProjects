@@ -189,6 +189,15 @@ main {
   z-index: 1;
 }
 
+.navlink.active {
+  color: var(--green);
+}
+.content{
+  display: none;
+}
+.content.active{
+  display: block;
+}
 
 /* =====================================================
    TABLET / DESKTOP
@@ -320,3 +329,5 @@ main {
     font-size: 2rem;
   }
 }
+
+

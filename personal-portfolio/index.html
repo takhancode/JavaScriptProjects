@@ -30,26 +30,32 @@
 
   <label for="menu-toggle" id="overlay"></label>
  
-  
-
 
   <nav class="nav-links">
-    <a href="#home" style="--i:1">
+    <a href="#" style="--i:1"
+    data-tab="home" class="navlink active">
       Home</a>
-    <a href="#about" style="--i:2">
+    <a href="#about" style="--i:2"
+    data-tab="about" class="navlink">
       About</a>
-    <a href="#projects" style="--i:3">
-      Projects</a>
-    <a href="#contact" style="--i:4">
+    <a href="#projects" style="--i:3"
+     data-tab="projects" class="navlink"
+    >
+    Projects</a>
+    <a href="#contact" style="--i:4" 
+    data-tab="contact" class="navlink">
       Contact</a>
-     <a href="#contact" class="cta-btn" style="--i:5">
-      let's talk
-     </a>
+     <a href="#contact"
+   class="cta-btn navlink"
+   style="--i:5"
+   data-tab="contact">
+   Let's talk
+  </a>
   </nav>
 </div>
 </header>
 
-<section class="home">
+<section id="home" class="content active">
   <div class="details">
     <h2> <span>Talha</span>
       Khan</h2>
@@ -90,6 +96,13 @@
 
 </section>
 
+<section id="about" class="content">About
+</section>
+
+<section id="projects" class="content">Projects
+</section>
+<section id="contact" class="content"> Contact
+</section>
 <script src="script.js" defer></script>
 </div>
 </body>
