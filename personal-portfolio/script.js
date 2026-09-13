@@ -146,5 +146,6 @@ navlinks.forEach((link) => {
     if (tabName === "services") {
       renderServices();
     }
+    toggle.checked=false;
   });
 });
