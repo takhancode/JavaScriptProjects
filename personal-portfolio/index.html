@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/services.css" />
+    <link rel="stylesheet" href="styles/about.css" />
 
     <link
       rel="stylesheet"
@@ -117,12 +118,50 @@
 
       <section id="services" class="content">
         <h2>My <span>Services</span></h2>
-        <div id="service-list" class="service-list">
-       
-        </div>
+        <div id="service-list" class="service-list"></div>
       </section>
 
-      <section id="about" class="content">About</section>
+      <section id="about" class="content">
+        <div class="sidebar">
+          <h3>Why Hire Me</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem
+            quos sapiente tempore sed dolor quidem doloremque explicabo ea hic
+            odio.
+          </p>
+          <div class="tabs">
+            <span data-section="experience" class="tab">Experience</span>
+            <span data-section="education" class="tab">Education </span>
+            <span data-section="skills" class="tab">Skills</span>
+            <span data-section="about" class="tab">About</span>
+          </div>
+        </div>
+
+        <aside id="experience" class="tab-content active">
+          <h2>My<span>Experience</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
+            cupiditate tenetur voluptates saepe consequuntur. Tempore assumenda
+            dolorem pariatur cupiditate error?
+          </p>
+          <div class="experience-list">
+
+          </div>
+        </aside>
+
+        <aside id="education" class="tab-content">
+          <h2>My<span>Education</span></h2>
+        </aside>
+
+        <aside id="skills" class="tab-content">
+          <h2>My<span>Skills</span></h2>
+        </aside>
+        
+        <aside id="about-me" class="tab-content">
+          <h2>About<span>Me</span></h2>
+        </aside>
+
+      </section>
 
       <section id="projects" class="content">Projects</section>
       <section id="contact" class="content">Contact</section>
