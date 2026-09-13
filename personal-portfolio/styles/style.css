@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --primary: #030a16;
@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -36,7 +36,6 @@ body.noscroll {
   height: 100dvh;
 }
 
-
 /* =========================
    MAIN CONTAINER
 ========================= */
@@ -47,7 +46,6 @@ body.noscroll {
   padding: 1rem 2rem;
   margin: 0 auto;
 }
-
 
 /* =========================
    HEADER
@@ -61,7 +59,6 @@ header {
   position: relative;
   z-index: 1002;
 }
-
 
 /* =========================
    BRAND
@@ -86,7 +83,6 @@ header {
   color: var(--green);
 }
 
-
 /* =========================
    MOBILE MENU
 ========================= */
@@ -101,7 +97,6 @@ header {
   cursor: pointer;
   z-index: 1002;
 }
-
 
 /* =========================
    OVERLAY
@@ -122,7 +117,6 @@ header {
   opacity: 1;
   visibility: visible;
 }
-
 
 /* =========================
    MOBILE NAV
@@ -179,7 +173,6 @@ nav a {
   transition-delay: calc(var(--i) * 0.2s);
 }
 
-
 /* =========================
    MAIN
 ========================= */
@@ -192,10 +185,10 @@ main {
 .navlink.active {
   color: var(--green);
 }
-.content{
+.content {
   display: none;
 }
-.content.active{
+.content.active {
   display: block;
 }
 
@@ -205,7 +198,6 @@ main {
 ===================================================== */
 
 @media screen and (width >= 1024px) {
-
   .main-container {
     width: 100%;
     max-width: none;
@@ -216,7 +208,6 @@ main {
   header {
     position: static;
   }
-
 
   /* ---------- BRAND ---------- */
 
@@ -233,7 +224,6 @@ main {
     font-size: 2.5rem;
   }
 
-
   /* ---------- MENU ICON ---------- */
 
   #menu-toggle {
@@ -243,7 +233,6 @@ main {
   .menu-icon {
     display: none;
   }
-
 
   /* ---------- NAV ---------- */
 
@@ -263,7 +252,6 @@ main {
 
     margin-left: 20px;
   }
-
 
   /* ---------- NAV LINKS ---------- */
 
@@ -285,14 +273,12 @@ main {
   }
 }
 
-
 /* =====================================================
    LARGE DESKTOP
    1280px+
 ===================================================== */
 
 @media screen and (width >= 1280px) {
-
   .main-container {
     width: 1200px;
     max-width: 1200px;
@@ -301,7 +287,6 @@ main {
 
     padding: 1rem 0;
   }
-
 
   /* ---------- BRAND ---------- */
 
@@ -318,7 +303,6 @@ main {
     font-size: 3rem;
   }
 
-
   /* ---------- NAV ---------- */
 
   nav {
@@ -329,5 +313,3 @@ main {
     font-size: 2rem;
   }
 }
-
-
