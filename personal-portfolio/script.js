@@ -111,14 +111,14 @@ navlinks.forEach((link) => {
         },
       ];
       const services = document.getElementsByClassName("service-list");
-      const innercontent = serviceList.map(() => {
-        return `
-            <div>InnerBox</div>
-            `;
-      });
-      Array.from(services).forEach((ele) => {
-        ele.innerHTML = innercontent;
-      });
+    //   const innercontent = serviceList.map(() => {
+    //     return `
+    //         <div>InnerBox</div>
+    //         `;
+    //   });
+    //   Array.from(services).forEach((ele) => {
+    //     ele.innerHTML = innercontent;
+    //   });
     }
   });
 });

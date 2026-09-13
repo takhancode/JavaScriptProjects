@@ -1,128 +1,161 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>TalhaPortfolio</title>
-   <link rel="shortcut icon" href="assets/img.jpg" type="image/x-icon">
-   <link rel="stylesheet" href="styles/style.css">
-   <link rel="stylesheet" href="styles/home.css">
-   <link rel="stylesheet" href="styles/services.css">
-   
-   
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TalhaPortfolio</title>
+    <link rel="shortcut icon" href="assets/img.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/services.css" />
+
+    <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
-</head>
-<body>
-   <div class="main-container">
-   <header>
-  <div class="brand-info">
-    <img src="assets/img.jpg" alt="logo"
-    title="logo" 
-    loading="lazy">
-    <h2>TKCode</h2>
-  </div>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="brand-info">
+          <img src="assets/img.jpg" alt="logo" title="logo" loading="lazy" />
+          <h2>TKCode</h2>
+        </div>
 
+        <div class="menu-area">
+          <input type="checkbox" id="menu-toggle" hidden />
+          <label for="menu-toggle" class="menu-icon"
+            ><i class="ph ph-list"></i
+          ></label>
+          <!-- <label for="menu-toggle" class="close-icon"><i class="bx bx-x"></i></label> -->
 
-  <div class="menu-area">
-   <input type="checkbox" id="menu-toggle" hidden>
-  <label for="menu-toggle" class="menu-icon"><i class="ph ph-list"></i></label>
-  <!-- <label for="menu-toggle" class="close-icon"><i class="bx bx-x"></i></label> -->
+          <label for="menu-toggle" id="overlay"></label>
 
-
-  <label for="menu-toggle" id="overlay"></label>
- 
-
-  <nav class="nav-links">
-    <a href="#" style="--i:1"
-    data-tab="home" class="navlink active">
-      Home</a>
-    <a href="#" style="--i:5"
-    data-tab="services" class="navlink">
-      Services</a>
-    <a href="#about" style="--i:2"
-    data-tab="about" class="navlink">
-      About</a>
-    <a href="#projects" style="--i:3"
-     data-tab="projects" class="navlink"
-    >
-    Projects</a>
-    <a href="#contact" style="--i:4" 
-    data-tab="contact" class="navlink">
-      Contact</a>
-     <!-- <a href="#contact"
+          <nav class="nav-links">
+            <a href="#" style="--i: 1" data-tab="home" class="navlink active">
+              Home</a
+            >
+            <a href="#" style="--i: 5" data-tab="services" class="navlink">
+              Services</a
+            >
+            <a href="#about" style="--i: 2" data-tab="about" class="navlink">
+              About</a
+            >
+            <a
+              href="#projects"
+              style="--i: 3"
+              data-tab="projects"
+              class="navlink"
+            >
+              Projects</a
+            >
+            <a
+              href="#contact"
+              style="--i: 4"
+              data-tab="contact"
+              class="navlink"
+            >
+              Contact</a
+            >
+            <!-- <a href="#contact"
    class="cta-btn navlink"
    style="--i:5"
    data-tab="contact">
    Let's talk
   </a> -->
-  </nav>
-</div>
-</header>
+          </nav>
+        </div>
+      </header>
 
-<section id="home" class="content active">
-  <div class="details">
-    <h2> <span>Talha</span>
-      Khan</h2>
-    <h3>Hi I'm
-      <span id="typing-span"></span>
-    </h3>
-    <p>I'm a Computer Science student passionate about building clean, functional web applications.
-       I enjoy turning ideas into working projects — learning by doing, debugging, and improving with every build.
-       Currently focused on strengthening my front-end foundations while working toward full-stack development.
-    </p>
-    <div class="bottom">
-      <button class="btn">Download Cv</button>
+      <section id="home" class="content active">
+        <div class="details">
+          <h2><span>Talha</span> Khan</h2>
+          <h3>
+            Hi I'm
+            <span id="typing-span"></span>
+          </h3>
+          <p>
+            I'm a Computer Science student passionate about building clean,
+            functional web applications. I enjoy turning ideas into working
+            projects — learning by doing, debugging, and improving with every
+            build. Currently focused on strengthening my front-end foundations
+            while working toward full-stack development.
+          </p>
+          <div class="bottom">
+            <button class="btn">Download Cv</button>
 
-      <div class="social-icons">
-      <a href="#">
-        <i class="ph ph-facebook-logo"></i>
-      </a>
+            <div class="social-icons">
+              <a href="#">
+                <i class="ph ph-facebook-logo"></i>
+              </a>
 
-      <a href="#">
-        <i class="ph ph-github-logo"></i>
-      </a>
+              <a href="#">
+                <i class="ph ph-github-logo"></i>
+              </a>
 
-       <a href="#">
-        <i class="ph ph-linkedin-logo"></i>
-      </a>
+              <a href="#">
+                <i class="ph ph-linkedin-logo"></i>
+              </a>
 
+              <a href="#">
+                <i class="ph ph-instagram-logo"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-      <a href="#">
-        <i class="ph ph-instagram-logo"></i>
-      </a>
+        <div class="img-container">
+          <img
+            src="assets/mypic1.jpg"
+            alt="Profile Picture"
+            title="Profile Picture"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section id="services" class="content">
+        <h2>My <span>Services</span></h2>
+        <div class="service-list">
+          <div class="box">
+            <div class="head-icons">
+             <i class="ph ph-code"></i>
+             <span>
+              <i class="ph ph-arrow-down"></i>
+             </span>
+            </div>
+            <h3>Web Development</h3>
+            <span class="spacer"></span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              ut, non nulla a nemo quod? Voluptate nemo consectetur expedita
+              corrupti!
+            </p>
+          </div>
+           <div class="box">
+            <div class="head-icons">
+             <i class="ph ph-code"></i>
+             <span>
+              <i class="ph ph-arrow-down"></i>
+             </span>
+            </div>
+            <h3>Web Development</h3>
+            <span class="spacer"></span>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              ut, non nulla a nemo quod? Voluptate nemo consectetur expedita
+              corrupti!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="content">About</section>
+
+      <section id="projects" class="content">Projects</section>
+      <section id="contact" class="content">Contact</section>
+      <script src="script.js" type="module" defer></script>
     </div>
-    </div>
-  </div>
-
-  <div class="img-container">
-  <img src="assets/mypic1.jpg" alt="Profile Picture" title="Profile Picture" loading="lazy">
-  </div>
-
-</section>
-
-<section id="services" class="content">
-<h2>My <span>Services</span></h2>
-<div class="service-list"></div>
-</section>
-
-<section id="about" class="content">About
-</section>
-
-<section id="projects" class="content">Projects
-</section>
-<section id="contact" class="content">Contact
-</section>
-<script src="script.js"  type="module" defer></script>
-</div>
-</body>
+  </body>
 </html>
-
-
-
-
