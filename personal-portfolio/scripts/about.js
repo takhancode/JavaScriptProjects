@@ -2,11 +2,11 @@ const aboutTabs = document.querySelectorAll(".tab");
 
 const aboutContent = document.querySelectorAll(".tab-content");
 
-// document.addEventListener('DOMContentLoaded',()=>{
-//   if(aboutTabs){
-//     aboutTabs[0].click();
-//   }
-// });
+  document.addEventListener('DOMContentLoaded',()=>{
+   if(aboutTabs){
+     aboutTabs[0].click();
+  }
+ });
 aboutTabs.forEach((tab) => {
   tab.addEventListener("click", (e) => {
     e.preventDefault();
@@ -53,10 +53,25 @@ aboutTabs.forEach((tab) => {
 
       const experiencecontent=experienceList.map((ele)=>{
        return `
-       
+        <div class="experience-box" key=${ele?.id}>
+              <h4>${ele?.date}</h4>
+              <h3>${ele?.position}</h3>
+              <div class="company-name">
+                <span></span>
+                <p>${ele?.company}</p>
+              </div>
+              <p>
+                ${ele?.details}
+              </p>
+            </div>
        
        `
-      })
+      }).join("");
+      if(experiences){ 
+    experiences.forEach((ele) => {
+        ele.innerHTML = experiencecontent;
+    });
+   }
     }
   });
 });
