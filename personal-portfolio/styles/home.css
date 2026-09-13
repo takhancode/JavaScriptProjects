@@ -190,6 +190,7 @@ scale:105%;
     }
     .bottom{
         flex-direction: row;
+        align-items: center;
         gap: 30px;
     }
     .btn{

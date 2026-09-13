@@ -85,6 +85,37 @@ navlinks.forEach((link) => {
 
         });
 
+        if(tabName=="services"){
+          const serviceList = [
+            {
+            id:1,
+            icon: "",
+            text:"",
+            para:"",
+
+          },{
+            id:2,
+            icon: "",
+            text:"",
+            para:"",
+
+          },{
+            id:3,
+            icon: "",
+            text:"",
+            para:"",}
+        ]
+        const services=document.getElementsByClassName("service-list");
+        const innercontent=serviceList.map(()=>{
+            return `
+            <div>InnerBox</div>
+            `;
+        });
+        Array.from(services).forEach((ele)=>{
+            ele.innerHTML=innercontent;
+        })
+        }
+
     });
 
 });

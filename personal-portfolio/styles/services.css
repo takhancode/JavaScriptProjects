@@ -3,5 +3,14 @@
     margin:2rem auto;
     width: 90%;
     max-width: 700px;
-    gap: 2.5rem;
+}
+
+
+@media screen and (width>=768px){
+}
+
+@media screen and (width>=1024px){
+   #services.content.active{
+   margin:3rem auto;
+   }
 }
