@@ -2,11 +2,11 @@ const aboutTabs = document.querySelectorAll(".tab");
 
 const aboutContent = document.querySelectorAll(".tab-content");
 
-  document.addEventListener('DOMContentLoaded',()=>{
-   if(aboutTabs){
-     aboutTabs[0].click();
+document.addEventListener("DOMContentLoaded", () => {
+  if (aboutTabs) {
+    aboutTabs[0].click();
   }
- });
+});
 aboutTabs.forEach((tab) => {
   tab.addEventListener("click", (e) => {
     e.preventDefault();
@@ -51,8 +51,9 @@ aboutTabs.forEach((tab) => {
         },
       ];
 
-      const experiencecontent=experienceList.map((ele)=>{
-       return `
+      const experiencecontent = experienceList
+        .map((ele) => {
+          return `
         <div class="experience-box" key=${ele?.id}>
               <h4>${ele?.date}</h4>
               <h3>${ele?.position}</h3>
@@ -63,15 +64,106 @@ aboutTabs.forEach((tab) => {
               <p>
                 ${ele?.details}
               </p>
-            </div>
+         </div>
        
-       `
+       `;
+        })
+        .join("");
+      if (experiences) {
+        experiences.forEach((ele) => {
+          ele.innerHTML = experiencecontent;
+        });
+      }
+    } else if (activeTab == "education") {
+      const education = document.querySelector(".education-list");
+      const educationlist = [
+        {
+          id: 1,
+          date: "2020-2022",
+          degree: "Matric",
+          institution: "Seek School System",
+        },
+        {
+          id: 2,
+          date: "2022-2024",
+          degree: "FSc Pre-Engineering",
+          institution: "Govt. Islamia Civil Lines College Lahore",
+        },
+        {
+          id: 3,
+          date: "2024-Present",
+          degree: "BS Computer Science",
+          institution: "NUML Lahore",
+        },
+      ];
+      const educationContent = educationlist
+        .map((ele) => {
+          return `
+         <div class="experience-box" key=${ele?.id}>
+              <h4>${ele?.date}</h4>
+              <h3>${ele?.degree}</h3>
+              <div class="company-name">
+                <span></span>
+                <p>${ele?.institution}</p>
+              </div>
+              <p>
+                ${ele?.details}
+              </p>
+         </div>
+        `;
+        })
+        .join("");
+      if (education) {
+        education.innerHTML = educationContent;
+      }
+    } else if (activeTab == "skills") {
+      const skills = document.querySelector(".skill-list");
+      const skillList = [
+        {
+          id: 1,
+          name: "HTML - Hyper Text Markup Language",
+          icon: "assets/html.png",
+        },
+        {
+          id: 2,
+          name: "CSS - Cascading Style Sheets",
+          icon: "assets/css.png",
+        },
+        {
+          id: 3,
+          name: "JavaScript",
+          icon: "assets/javascript.png",
+        },
+        {
+          id: 4,
+          name: "C++",
+          icon: "assets/cpp.png",
+        },
+        {
+          id: 5,
+          name: "Python",
+          icon: "assets/python.png",
+        },
+        {
+          id: 6,
+          name: "Git & GitHub",
+          icon: "assets/github.png",
+        },
+      ];
+      const skillContent=skillList.map((ele)=>{
+         return`
+            <div class="skill-box" key=${ele?.id}>
+              <img src=${ele?.icon}
+               alt=${ele?.name}
+                title=${ele?.name}
+                loading="lazy" />
+          </div>
+         
+         `;
       }).join("");
-      if(experiences){ 
-    experiences.forEach((ele) => {
-        ele.innerHTML = experiencecontent;
-    });
-   }
+      if(skills){
+        skills.innerHTML=skillContent;
+      }
     }
   });
 });
