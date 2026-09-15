@@ -20,6 +20,7 @@ aboutTabs.forEach((tab) => {
       c.classList.remove("active");
     });
     const activeTab = tab.dataset.section;
+    console.log(activeTab);
     document.getElementById(activeTab).classList.add("active");
 
     if (activeTab == "experience") {
@@ -150,8 +151,9 @@ aboutTabs.forEach((tab) => {
           icon: "assets/github.png",
         },
       ];
-      const skillContent=skillList.map((ele)=>{
-         return`
+      const skillContent = skillList
+        .map((ele) => {
+          return `
             <div class="skill-box" key=${ele?.id}>
               <img src=${ele?.icon}
                alt=${ele?.name}
@@ -160,10 +162,58 @@ aboutTabs.forEach((tab) => {
           </div>
          
          `;
-      }).join("");
-      if(skills){
-        skills.innerHTML=skillContent;
+        })
+        .join("");
+      if (skills) {
+        skills.innerHTML = skillContent;
       }
+    }  else if (activeTab == "about-me") {
+
+    const myInfo = document.querySelector(".my-info");
+    
+
+    const infoList = [
+        {
+            id: 1,
+            key: "Name:",
+            value: "Talha Code",
+        },
+        {
+            id: 2,
+            key: "Education:",
+            value: "BS Computer Science",
+        },
+        {
+            id: 3,
+            key: "University:",
+            value: "NUML Lahore",
+        },
+        {
+            id: 4,
+            key: "Specialization:",
+            value: "Web Development",
+        },
+        {
+            id: 5,
+            key: "Status:",
+            value: "Computer Science Student",
+        },
+    ];
+
+    const infoContent = infoList
+        .map((ele) => {
+            return `
+                <div class="info-box">
+                    <span>${ele.key}</span>
+                    <span>${ele.value}</span>
+                </div>
+            `;
+        })
+        .join("");
+
+    if (myInfo) {
+        myInfo.innerHTML = infoContent;
     }
+}
   });
 });

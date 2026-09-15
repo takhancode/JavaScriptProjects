@@ -1,9 +1,13 @@
 #about.content.active {
   width: 100%;
   margin: 2rem auto;
+  padding: 0 1rem 4rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
+  min-height: auto;
+  height: auto;
+  overflow: visible;
 }
 .sidebar {
   display: flex;
@@ -50,13 +54,14 @@
   display: none;
 }
 .tab-content.active {
-  display: inline-flex;
+  display: flex;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: auto;
+  overflow: visible;
 }
 
 aside h2 span {
@@ -159,6 +164,35 @@ font-size: 1.4rem;
 }
 
 
+.my-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 4rem;
+  width: 100%;
+  padding: 1rem;
+  border-right: 4px solid var(--green);
+}
+
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+
+
+.info-box span:first-child {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.info-box span:last-child {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
 @media screen and (width >=768px){
 #about.content.active{
     grid-template-columns: repeat(7,1fr);
@@ -200,5 +234,23 @@ aside p{
 .experience-box h3{
     font-size: 1.8rem;
 }
+}
+
+
+@media screen and (width < 768px) {
+  .my-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    border-right: none;
+    border-left: 3px solid var(--green);
+  }
+
+  .info-box span:first-child {
+    font-size: 1.2rem;
+  }
+
+  .info-box span:last-child {
+    font-size: 1.1rem;
+  }
 }
     
