@@ -1,4 +1,4 @@
-#project.content.active{
+#projects.content.active{
     display: block;
     padding: 0.7rem;
 }
@@ -68,7 +68,7 @@
     box-shadow: 2px 2px 2px var(--green),
      -2px 2px 2px var(--green),
       2px -2px 2px var(--green),
-      - -2px -2px 2px var(--green);
+      -2px -2px 2px var(--green);
 }
 
 .links a:first-child{
@@ -98,6 +98,18 @@ font-size: 1.5rem;
     align-self: center;
 }
 
+
+.disabled-btn{
+color: var(--disabled)!important;
+border-color: var(--disabled)!important;
+pointer-events: none;
+opacity: 0.5;
+}
+.disabled-btn:hover{
+    box-shadow: none;
+    background: none;
+    cursor: auto;
+}
 
 @media screen and(width>=1024px){
     .projects{
