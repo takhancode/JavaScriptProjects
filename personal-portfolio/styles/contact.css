@@ -1,0 +1,253 @@
+/* ================= CONTACT SECTION ================= */
+
+#contact.content.active {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info h2 {
+  font-size: 2.4rem;
+  color: var(--white);
+}
+
+.contact-info h2 span {
+  color: var(--green);
+}
+
+.contact-info > p {
+  font-size: 1.1rem;
+  line-height: 1.45;
+  text-align: justify;
+  max-width: 560px;
+}
+
+/* ================= CONTACT MEDIA ================= */
+
+.contact-media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+  margin-top: 1rem;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.media span {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+  background: var(--secondary);
+  color: var(--green);
+}
+
+.media span i {
+  font-size: 1.8rem;
+}
+
+.contact-value {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact-value p {
+  margin: 0;
+  color: var(--green);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contact-value a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.contact-value a:hover {
+  color: var(--green);
+}
+
+/* ================= FORM ================= */
+
+#contact form {
+  width: 100%;
+}
+
+#contact fieldset {
+  border: none;
+  border-radius: 10px;
+  padding: 1.7rem 1.5rem 1.5rem;
+  background: var(--secondary);
+  margin: 0;
+}
+
+/* ================= FORM TITLE ================= */
+
+#contact .contact-title {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+#contact .contact-title span {
+  color: var(--green);
+}
+
+/* ================= INPUT AREA ================= */
+
+#contact .field {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem 1rem;
+}
+
+#contact .field > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#contact .field > div:last-child {
+  grid-column: 1 / -1;
+}
+
+#contact label {
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ================= INPUTS ================= */
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 0.9rem;
+
+  border: none;
+  border-radius: 5px;
+  outline: none;
+
+  background: #5b6068;
+  color: var(--white);
+
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #d0d0d0;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 2px solid var(--green);
+}
+
+#contact textarea {
+  resize: vertical;
+}
+
+/* ================= BUTTON ================= */
+
+#contact #send-msg {
+  display: block;
+
+  margin: 1.5rem auto 0;
+
+  padding: 0.9rem 2rem;
+
+  border: none;
+  border-radius: 30px;
+
+  background: var(--green);
+  color: var(--primary);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#contact #send-msg:hover {
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 2px var(--green),-2px 2px 2px var(--green),
+  2px -2px 2px var(--green),-2px -2px 2px var(--green);
+}
+
+/* ================= TABLET ================= */
+
+@media screen and (width < 900px) {
+  #contact.content.active {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media screen and (width < 600px) {
+  #contact.content.active {
+    padding: 1rem;
+  }
+
+  .contact-info h2 {
+    font-size: 2rem;
+  }
+
+  .contact-info > p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .contact-media {
+    grid-template-columns: 1fr;
+  }
+
+  #contact fieldset {
+    padding: 1.3rem;
+  }
+
+  #contact .contact-title {
+    font-size: 2rem;
+  }
+
+  #contact .field {
+    grid-template-columns: 1fr;
+  }
+
+  #contact .field > div:last-child {
+    grid-column: auto;
+  }
+}

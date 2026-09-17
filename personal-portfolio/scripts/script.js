@@ -1,8 +1,9 @@
 const toggle = document.getElementById("menu-toggle");
-if (toggle) {
-  toggle.addEventListener("change", () => {
-    document.body.classList.toggle("noscroll", toggle.checked);
-  });
+if (toggle&&toggle.checked) {
+ 
+    document.body.classList.add("noscroll");
+}else{
+   document.body.classList.remove("noscroll");
 }
 
 const words = ["Developer", "Engineer", "Learner", "Student"];
@@ -148,4 +149,37 @@ navlinks.forEach((link) => {
     }
     toggle.checked=false;
   });
+});
+
+
+
+
+
+
+
+// EmailJS initialize
+emailjs.init({
+  publicKey: "bi_qMiWwi_8TkW3JM",
+});
+
+// Contact form
+const form = document.querySelector("#contact-form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_87l2o4g",
+      "template_85m7s8c",
+      this
+    )
+    .then(() => {
+      alert("Message sent successfully! ✅");
+      form.reset();
+    })
+    .catch((error) => {
+      console.log("FAILED...", error);
+      alert("Message failed to send ❌");
+    });
 });
