@@ -1,9 +1,8 @@
 const toggle = document.getElementById("menu-toggle");
-if (toggle&&toggle.checked) {
- 
-    document.body.classList.add("noscroll");
-}else{
-   document.body.classList.remove("noscroll");
+if (toggle && toggle.checked) {
+  document.body.classList.add("noscroll");
+} else {
+  document.body.classList.remove("noscroll");
 }
 
 const words = ["Developer", "Engineer", "Learner", "Student"];
@@ -147,15 +146,9 @@ navlinks.forEach((link) => {
     if (tabName === "services") {
       renderServices();
     }
-    toggle.checked=false;
+    toggle.checked = false;
   });
 });
-
-
-
-
-
-
 
 // EmailJS initialize
 emailjs.init({
@@ -164,22 +157,91 @@ emailjs.init({
 
 // Contact form
 const form = document.querySelector("#contact-form");
+const sendBtn = document.querySelector("#send-msg");
+
+const originalText = sendBtn.innerHTML;
+
+const originalStyle = {
+  backgroundColor: sendBtn.style.backgroundColor,
+  color: sendBtn.style.color,
+  border: sendBtn.style.border,
+  boxShadow: sendBtn.style.boxShadow,
+};
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
+  const name = document.querySelector("#name").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const phone = document.querySelector("#phone").value.trim();
+  const message = document.querySelector("#message").value.trim();
+
+  // Validation
+  if (!name || !email || !phone || !message) {
+    Toastify({
+      text: "All Fields Are Mandatory",
+      duration: 3000,
+      gravity: "top",
+      position: "center",
+      close: true,
+      stopOnFocus: true,
+      style: {
+        background: "rgb(206, 16, 16)",
+      },
+    }).showToast();
+
+    return;
+  }
+
+  // Sending state
+  sendBtn.innerHTML = "Sending...";
+  sendBtn.style.backgroundColor = "gray";
+  sendBtn.style.color = "white";
+  sendBtn.style.border = "none";
+  sendBtn.style.boxShadow = "none";
+  sendBtn.disabled = true;
+
+  // Send email
   emailjs
-    .sendForm(
-      "service_87l2o4g",
-      "template_85m7s8c",
-      this
-    )
+    .sendForm("service_87l2o4g", "template_85m7s8c", this)
     .then(() => {
-      alert("Message sent successfully! ✅");
+      Toastify({
+        text: "Message Sent Successfully! ✅",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        close: true,
+        stopOnFocus: true,
+        style: {
+          background: "rgb(9, 222, 38)",
+        },
+      }).showToast();
+
       form.reset();
+
+      setTimeout(() => {
+        sendBtn.innerHTML = originalText;
+        Object.assign(sendBtn.style, originalStyle);
+        sendBtn.disabled = false;
+      }, 3000);
     })
     .catch((error) => {
-      console.log("FAILED...", error);
-      alert("Message failed to send ❌");
+      console.log("EmailJS Error:", error);
+
+      Toastify({
+        text: "Message Failed ❌",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        close: true,
+        stopOnFocus: true,
+        style: {
+          background: "rgb(206, 16, 16)",
+        },
+      }).showToast();
+
+      sendBtn.innerHTML = originalText;
+      Object.assign(sendBtn.style, originalStyle);
+      sendBtn.disabled = false;
     });
 });
